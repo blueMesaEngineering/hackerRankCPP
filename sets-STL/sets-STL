@@ -1,0 +1,42 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    
+    int queryCount;
+    cin >> queryCount;
+    
+    set<int>s;
+    for(int i = 0; i < queryCount; i++) {
+        int queryType = 0;
+        int queryElement = 0;
+        cin >> queryType;
+        cin >> queryElement;
+
+        if(queryType == 1) {
+            s.insert(queryElement);
+        }
+        if(queryType == 2) {
+            if(s.find(queryElement) != s.end())
+                s.erase(queryElement);
+        }
+        if(queryType == 3) {
+            if(s.find(queryElement) != s.end())
+                cout << "Yes\n";
+            else
+                cout << "No\n";
+        }
+    }
+    
+    return 0;
+}
+
+
+
